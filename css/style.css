@@ -1,0 +1,445 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #dac18f;
+  --color-main: #40352A;
+  --color-text: #40352A;
+  --color-white: #fff;
+  --color-accent: #8B5E3C;
+  --color-light: #F8F3E8;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Serif JP", serif;
+  color: #40352A;
+  background-color: #dac18f;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+li {
+  list-style: none;
+  
+}
+
+a{
+  text-decoration: none;
+}
+
+.section {
+  padding: 100px 5%;
+}
+
+/* セクション見出し共通 */
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: inherit;
+}
+
+/* 縦書き見出し */
+.section-title--vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* 横書き見出し */
+.section-title--horizontal {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+
+/*========== header ==========*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 128px;
+  padding: 5px 15px;
+  background-color: var(--color-bg);
+}
+
+.logo {
+  width: 240px;
+}
+
+header .logo a {
+  display: block;
+}
+
+header .navi {
+  display: flex;
+  margin-right: 40px;
+  gap: 48px;
+}
+
+header .navi li {
+  margin-left: 0;
+  font-size: 16px;
+}
+
+header .navi li a {
+  color: #40352A;
+}
+
+
+/*========== mainvisual ==========*/
+.mainvisual {
+  position: relative;
+  background-image: url(../img/mainvisual.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.mainvisual::before {
+  content: "";
+  position: absolute;
+  inset: 0;   /* 親要素全体を指定 */
+
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  z-index: 1;
+}
+
+.mainvisual p {
+  position: absolute;
+  right: 10%;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  line-height: 1.8;
+  letter-spacing: 0.12em;
+
+  font-size: 28px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/*========== concept ==========*/
+#concept {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  background-color: #40352A;
+  color: white;
+}
+
+#concept .section-title {
+  width: 10%;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+#concept .concept-sentence {
+  width: 30%;
+  height: 520px;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+
+  line-height: 2;
+  letter-spacing: 0.08em;
+  margin-top: 40px;
+  margin-left: 16px;
+}
+
+#concept .concept-image {
+  width: 60%;
+  box-shadow: -12px 18px 0 #dac18f;
+  margin-right: 30px;
+}
+
+
+/*========== menu ==========*/
+#menu {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 0;
+  gap: 60px;
+}
+
+#menu .menu-list {
+  width: 70%;
+  margin-top: 40px;
+}
+
+#menu .menu-item {
+  display: flex;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+
+#menu .menu-item img {
+  flex: 3;
+  height: 260px;
+  object-fit: cover;
+}
+
+#menu .menu-item .menu-description {
+  flex: 2;
+  padding: 24px 0;
+  margin: auto 0;
+}
+
+#menu .menu-copy {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 13px;
+}
+
+#menu .menu-description h3 {
+  font-size: 26px;
+  margin-top: 12px;
+}
+
+#menu .menu-description p {
+  margin-top: 16px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+#menu .menu-price {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#menu .menu-item--reverse {
+  flex-direction: row-reverse;
+}
+
+
+/*========== commitment ==========*/
+#commitment {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#commitment .commitment-list {
+  display: flex;
+  gap: 24px;
+}
+
+#commitment .commitment-item {
+  flex: 1;
+  background-color: #f5e7c6;
+  padding: 24px 24px 48px;
+  border: 1px solid rgba(64, 53, 42, 0.2);
+}
+
+#commitment .commitment-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-accent);
+}
+
+#commitment .commitment-lead  {
+  color: var(--color-accent);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin: 12px 0 8px;
+}
+
+#commitment .commitment-item h3 {
+  font-size: 22px;
+  margin: 0 0 16px;
+}
+
+#commitment .commitment-item p {
+  line-height: 1.8;
+  margin: 0;
+}
+
+
+/*========== access ==========*/
+#access {
+  padding-bottom: 0;
+}
+
+#access .access-info {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+#access .access-info img{
+  flex: 0 0 45%;
+  max-width: 480px;
+}
+
+#access .access-info dl {
+  flex: 1;
+  margin-left: 0;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  row-gap: 16px;
+  column-gap: 24px;  
+}
+
+#access .access-info dt,
+#access .access-info dd {
+  margin: 0;
+}
+
+#access .access-info dt {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+#access .access-info dd {
+  line-height: 1.8;
+}
+
+
+#access .exterior {
+  margin-top: 80px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 60px 0;
+  background-color: var(--color-main);
+}
+
+#access .exterior p {
+  color: var(--color-white);
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  line-height: 1.8;
+}
+
+#access .exterior img {
+  width: 80%;
+  max-width: 1100px;
+  margin: 32px auto 0;
+}
+
+
+/*========== footer ==========*/
+footer {
+  background-color: var(--color-main);
+  color: var(--color-white);
+  padding: 60px 5% 24px;
+}
+
+.footer-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 300px;
+  margin: 0 auto 32px;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.footer-nav li {
+  font-size: 14px;
+}
+
+.footer-nav a {
+  color: var(--color-white);
+}
+
+.copyright {
+  font-size: 12px;
+  margin: 0;
+}
+
+
+/*=================================
+ スマホ
+=================================*/
+@media screen and (max-width:768px) {
+  .section {
+    padding: 72px 6%;
+  }
+
+  #concept,
+  #menu,
+  #commitment .commitment-list,
+  #access .access-info {
+    flex-direction: column;
+  }
+
+  #menu .menu-list,
+  #access .access-info img,
+  #access .access-info dl {
+    width: 100%;
+    max-width: none;
+  }
+
+  #access .access-info img {
+    flex: none;
+  }
+
+  /*========== header ==========*/
+  header {
+    height: auto;
+    padding: 16px 6%;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  header .navi {
+    margin-right: 0;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  header .navi li {
+    font-size: 14px;
+  }
+
+}
